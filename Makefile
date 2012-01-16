@@ -17,10 +17,10 @@ codeUnity:
 
 cleanCodeCppUTest:
 	make -i -f MakefileCppUTest.mk clean
-	
+
 cleanCodeUnity:
 	make -i -f MakefileUnity.mk clean
-	
+
 everything: CppUTest CppUTestExt
 	make -i -C CppUTest all extensions
 	make -i -C t0
