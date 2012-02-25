@@ -14,11 +14,10 @@ void LedDriver_Destroy(void)
 
 void LedDriver_TurnOn(int ledNumber)
 {
-  *ledsAddress = 1;
+  *ledsAddress |= 1 << (ledNumber-1);
 }
 
 void LedDriver_TurnOff(int ledNumber)
 {
   *ledsAddress = 0;
 }
-
