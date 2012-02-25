@@ -1,6 +1,10 @@
 #include "unity_fixture.h"
 #include "LedDriver.h"
 
+#ifndef NULL
+#define NULLÅ@((void *) 0)
+#endif
+
 TEST_GROUP(LedDriver);
 
 static uint16_t virtualLeds;
