@@ -67,3 +67,9 @@ void LedDriver_TurnAllOn()
 	ledsImage = ALL_LEDS_ON;
 	updateHardware();
 }
+
+BOOL LedDriver_IsOn(int ledNumber)
+{
+	return ledsImage & (convertLedNumberToBit(ledNumber));
+}
+

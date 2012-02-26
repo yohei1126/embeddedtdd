@@ -99,7 +99,9 @@ TEST(LedDriver, OutOfBoundsProducesRuntimeError)
 	TEST_ASSERT_EQUAL(-1, RuntimeErrorStub_GetLastParameter());
 }
 
-IGNORE_TEST(LedDriver, OutOfBoundsToDo)
+TEST(LedDriver, IsOn)
 {
-	/* TODO: what should we do during runtime? */
+	TEST_ASSERT_FALSE(LedDriver_IsOn(11));
+	LedDriver_TurnOn(11);
+	TEST_ASSERT_TRUE(LedDriver_IsOn(11));
 }
