@@ -17,6 +17,8 @@ UNITY_CFLAGS += -DUNITY_OUTPUT_CHAR=UnityOutputCharSpy_OutputChar
 UNITY_WARNINGFLAGS = -Wall -Werror -Wswitch-default
 #UNITY_WARNINGFLAGS += -Wshadow 
 
+UNITY_TEST_RUNNER_FLAGS = -v
+
 SRC_DIRS = \
 	$(PROJECT_HOME_DIR)/src/LedDriver
 #	$(PROJECT_HOME_DIR)/src/HomeAutomation \
