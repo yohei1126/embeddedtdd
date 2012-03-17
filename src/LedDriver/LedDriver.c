@@ -29,17 +29,17 @@ static void updateHardware(void)
 
 int IsLedOutOfBounds(int ledNumber)
 {
-    return (ledNumber < FIRST_LED) || (ledNumber > LAST_LED);
+	return (ledNumber < FIRST_LED) || (ledNumber > LAST_LED);
 }
 
 void setLedImageBit(int ledNumber)
 {
-    ledsImage |= convertLedNumberToBit(ledNumber);
+	ledsImage |= convertLedNumberToBit(ledNumber);
 }
 
 void clearLedImageBit(int ledNumber)
 {
-    ledsImage &= ~convertLedNumberToBit(ledNumber);
+	ledsImage &= ~convertLedNumberToBit(ledNumber);
 }
 
 void LedDriver_TurnOn(int ledNumber)
