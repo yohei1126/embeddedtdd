@@ -21,8 +21,10 @@ void TimeService_GetTime(Time *time)
 
 void FakeTimeService_SetDay(Day day)
 {
+	myTime.dayOfWeek = day;
 }
 
 void FakeTimeService_SetMinute(int minute)
 {
+	myTime.minuteOfDay = minute;
 }
