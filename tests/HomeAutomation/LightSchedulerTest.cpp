@@ -4,6 +4,7 @@ extern "C"
 {
 #include "LightScheduler.h"
 #include "LightControllerSpy.h"
+#include "TimeService.h"
 #include "FakeTimeService.h"
 }
 TEST_GROUP(LightScheduler)
@@ -11,15 +12,28 @@ TEST_GROUP(LightScheduler)
 	void setup()
 	{
 		LightController_Create();
+		TimeService_Create();
 	}
 	void teardown()
 	{
 		LightController_Destroy();
+		TimeService_Destroy();
 	}
 };
 
 TEST(LightScheduler, NoChangeToLightsDuringInitialization)
 {
+	LONGS_EQUAL(LIGHT_ID_UNKNOWN, LightControllerSpy_GetLastId());
+	LONGS_EQUAL(LIGHT_STATE_UNKNOWN, LightControllerSpy_GetLastState());
+}
+
+TEST(LightScheduler, NoScheduleNothingHappens)
+{
+	FakeTimeService_SetDay(MONDAY);
+	FakeTimeService_SetMinute(100);
+
+	LightScheduler_Wakeup();
+
 	LONGS_EQUAL(LIGHT_ID_UNKNOWN, LightControllerSpy_GetLastId());
 	LONGS_EQUAL(LIGHT_STATE_UNKNOWN, LightControllerSpy_GetLastState());
 }
