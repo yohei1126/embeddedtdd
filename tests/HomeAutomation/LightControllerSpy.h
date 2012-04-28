@@ -7,7 +7,7 @@ enum
     LIGHT_OFF = 0, LIGHT_ON = 1
 };
 
-int LightControllerSpy_GetLastId();
-int LightControllerSpy_GetLastState();
+int LightControllerSpy_GetLastId(void);
+int LightControllerSpy_GetLastState(void);
 
 #endif
