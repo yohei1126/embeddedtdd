@@ -1,6 +1,6 @@
 # this is set up to by default to make the top level and test with CppUTest
-all: codeUnity
-#all: codeCppUTest
+#all: codeUnity
+all: codeCppUTest
 
 clean: cleanCodeUnity
 #clean: cleanCodeCppUTest
