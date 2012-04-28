@@ -8,9 +8,11 @@ TEST_GROUP(LightControllerSpy)
 {
 	void setup()
 	{
+		LightController_Create();
 	}
 	void teardown()
 	{
+		LightController_Destroy();
 	}
 };
 
