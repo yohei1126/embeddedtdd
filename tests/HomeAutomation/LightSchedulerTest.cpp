@@ -12,11 +12,13 @@ TEST_GROUP(LightScheduler)
 	void setup()
 	{
 		LightController_Create();
+		LightScheduler_Create();
 		TimeService_Create();
 	}
 	void teardown()
 	{
 		LightController_Destroy();
+		LightScheduler_Destroy();
 		TimeService_Destroy();
 	}
 };
@@ -37,7 +39,7 @@ TEST(LightScheduler, NoScheduleNothingHappens)
 	LONGS_EQUAL(LIGHT_ID_UNKNOWN, LightControllerSpy_GetLastId());
 	LONGS_EQUAL(LIGHT_STATE_UNKNOWN, LightControllerSpy_GetLastState());
 }
-/*
+
 TEST(LightScheduler, ScheduleOnEverydayNotTimeYet)
 {
 	//the light with id equals to 3 to turn on every day at the 1200th minute of the day(8 pm)
@@ -53,4 +55,3 @@ TEST(LightScheduler, ScheduleOnEverydayNotTimeYet)
 	LONGS_EQUAL(LIGHT_ID_UNKNOWN, LightControllerSpy_GetLastId());
 	LONGS_EQUAL(LIGHT_STATE_UNKNOWN, LightControllerSpy_GetLastState());
 }
-*/
