@@ -2,10 +2,10 @@
 
 int LightControllerSpy_GetLastId(void)
 {
-	return 1000;
+	return LIGHT_ID_UNKNOWN;
 }
 
 int LightControllerSpy_GetLastState(void)
 {
-	return 1000;
+	return LIGHT_STATE_UNKNOWN;
 }
